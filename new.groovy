@@ -302,52 +302,52 @@ pipeline {
             parallel {
                 stage('deploy hospital-manage to dev') {
                     steps {
-                        kubernetesDeploy(configs: 'hospital-manage/deploy/**', enableConfigSubstitution: true, kubeconfigId: '"$KUBECONFIG_CREDENTIAL_ID"')
+                        kubernetesDeploy(configs: 'hospital-manage/deploy/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
                     }
                 }
                 stage('deploy server-gateway to dev') {
                     steps {
-                        kubernetesDeploy(configs: 'server-gateway/deploy/**', enableConfigSubstitution: true, kubeconfigId: '"$KUBECONFIG_CREDENTIAL_ID"')
+                        kubernetesDeploy(configs: 'server-gateway/deploy/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
                     }
                 }
                 stage('deploy service-cmn to dev') {
                     steps {
-                        kubernetesDeploy(configs: 'service/service-cmn/deploy/**', enableConfigSubstitution: true, kubeconfigId: '"$KUBECONFIG_CREDENTIAL_ID"')
+                        kubernetesDeploy(configs: 'service/service-cmn/deploy/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
                     }
                 }
                 stage('deploy service-hosp to dev') {
                     steps {
-                        kubernetesDeploy(configs: 'service/service-hosp/deploy/**', enableConfigSubstitution: true, kubeconfigId: '"$KUBECONFIG_CREDENTIAL_ID"')
+                        kubernetesDeploy(configs: 'service/service-hosp/deploy/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
                     }
                 }
                 stage('deploy service-order to dev') {
                     steps {
-                        kubernetesDeploy(configs: 'service/service-order/deploy/**', enableConfigSubstitution: true, kubeconfigId: '"$KUBECONFIG_CREDENTIAL_ID"')
+                        kubernetesDeploy(configs: 'service/service-order/deploy/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
                     }
                 }
                 stage('deploy service-oss to dev') {
                     steps {
-                        kubernetesDeploy(configs: 'service/service-oss/deploy/**', enableConfigSubstitution: true, kubeconfigId: '"$KUBECONFIG_CREDENTIAL_ID"')
+                        kubernetesDeploy(configs: 'service/service-oss/deploy/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
                     }
                 }
                 stage('deploy service-sms to dev') {
                     steps {
-                        kubernetesDeploy(configs: 'service/service-sms/deploy/**', enableConfigSubstitution: true, kubeconfigId: '"$KUBECONFIG_CREDENTIAL_ID"')
+                        kubernetesDeploy(configs: 'service/service-sms/deploy/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
                     }
                 }
                 stage('deploy service-statistics to dev') {
                     steps {
-                        kubernetesDeploy(configs: 'service/service-statistics/deploy/**', enableConfigSubstitution: true, kubeconfigId: '"$KUBECONFIG_CREDENTIAL_ID"')
+                        kubernetesDeploy(configs: 'service/service-statistics/deploy/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
                     }
                 }
                 stage('deploy service-task to dev') {
                     steps {
-                        kubernetesDeploy(configs: 'service/service-task/deploy/**', enableConfigSubstitution: true, kubeconfigId: '"$KUBECONFIG_CREDENTIAL_ID"')
+                        kubernetesDeploy(configs: 'service/service-task/deploy/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
                     }
                 }
                 stage('deploy service-user to dev') {
                     steps {
-                        kubernetesDeploy(configs: 'service/service-user/deploy/**', enableConfigSubstitution: true, kubeconfigId: '"$KUBECONFIG_CREDENTIAL_ID"')
+                        kubernetesDeploy(configs: 'service/service-user/deploy/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
                     }
                 }
             }
@@ -367,6 +367,7 @@ pipeline {
         KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
         REGISTRY = 'registry.cn-hangzhou.aliyuncs.com'
         DOCKERHUB_NAMESPACE = 'z_yygh'
+        ALIYUNHUB_NAMESPACE = 'z_yygh'
         GITHUB_ACCOUNT = 'kubesphere'
         APP_NAME = 'devops-java-sample'
     }
